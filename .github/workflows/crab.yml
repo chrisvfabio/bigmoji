@@ -1,0 +1,40 @@
+name: crab
+on: [push]
+jobs:
+  crab:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo '
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#GB@@@@@@#5Y5&@@@@@&BG&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@#YJJ5B@@@BYJJJY#@@@GYJJY&@@@@@@&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#YY5G#@@&YJJJJJ5GPJJJJJJYGGYJJJJJP@@@#PYJ5&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@GJJJJJ5P5JJJJJJJJJJJJJJJJJJJJJJJJJ5PYJJJJJB@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@GY5GB&@&YJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ5@@#BP5YB@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@5JJJJYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJYYJJJJJP@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@5JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJG@@@@@@@@@@@@@@@@@@@@@@@#G5Y#@@@@@@&@
+          @@@@@@@@@@@@@@@@@#YY5PGBBYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ5BGGP5Y5&@@@@@@@@@@@@#GYJJJ5@@@@@@GY&
+          @@@@@@@@@@@@@@@@@#JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJY&@@@@@@@@@@&PJJJJJJG@@@@@#YJ5
+          @@@@@@@@@@@@@@@@@@PJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJB@@@@@@@@@@#YJJJJJJJB@@@@#YJJJ
+          @@@@@@@@@@@&######PJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJG######@@@@YJJJJJJJJB@@&PJJJJY
+          @@@@@@@@@@@GJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJB@@&YJJJJJJJJG#PYJJJJJB
+          @@@@@@@@@@@@5JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJP@@@@PJJJJJJJJJJJJJJJYB@
+          @@@@@@@@@@@@@5JJJJJJJJJJJJJJJJJJJJJJJJJJYYYYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJP@@@@@@5JJJJJJJJJJJJJP&@@
+          @@@@@@@&##BBGYJJJJJJJJJJJJJJJJJJJJJJJJJJ7!!7YYYJJJJJJJJJJJJJYYJ?JPGG5JJJJJJJJJJJJJJJJJJJJJJJJJJ5GBB##@@GYJJJJJJJJYP#@@@@
+          @@@@@@&YJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJY~    J@&#BPYJJJJJJJYP!:. .#@@@GJJJJJJJJJJJJJJJJJJJJJJYYYJJJJJJ5@@GJJJJJY5B&@@@@@@
+          @@@@@@@BYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJGY   .G@@@@@BJJJJJJJB@!   .B@@@@PJJJJJJJJJJJJJJJYYYY5Y?J~!YJJJ5#&GYJJJ5B&@@@@@@@@@
+          @@@@@@@@&PJJJJJJJJJJJJJJJJJJJJJJJJJJJY&@B55#@@@@@@&YJJJJJY&@&Y7?B@@@@@&JJJJJJYYYYYYYYYYJJ?7!~~^7JJJG#GYJJJYB@@@@@@@@@@@@
+          @@@@@@@@&PJJJJJJJJJJJJJJJJJJJJJJJJJJJJ#@@@@@@@@@@@#JJJJJJJ#@@@@@@@@@@@#YYYYYYJJ?77!~~^^^^::!YYYJJJY5JJJJYG&@@@@@@@@@@@@@
+          @@@@@#BPYJJJJYYJJJJJJJJJJJJJJJJJJJJJJJYB@@@@@@@@@#YJJJJJJJ5&@@@@@&#BGP?7!!~^^^^^^^^^^^^^^~JYJJJJJJJJJJJP&@@@@@@@@@@@@@@@
+          @@#GYJJJJJJJJJYYJJJYYYYYYYJJJJJJJJJJJJJJYPB#&##BPYYYYYYYYYJJYYJ7!~^::::::::^^^^^^^^^^^^!?YYJJJJJJJJJJJJY5G&@@@@@@@@@@@@@
+          G5JJJJJJJJYJJJJYYY5555555PP5YYJJJJJJJJYYYYYY5YYYYJJ?77!~^^::.....::::^^^^^^^^^^^^^^^~7JYYJJJJYYYYYYJJJJJJJJ5B@@@@@@@@@@@
+          5JJJJJJYGPP5JJJJJJJJJJJJJYY5PP5YY55PGB##Y??7!!~^::.......::::^^^^^^^^^^^^^^^^^^^^~!?JYJJYYY5PPBBPPPGGJJJJJJJG@@@@@@@@@@@
+          @GJJJJJY&@BPYJJJJJJJJJJJJJJJJ5B#&&@@@@@&~:^:::...::::^^^^^^^^^^^^^^^^^^^^^^^^~!7JJYYY55PPGB#&@@GPPB@#JJJJJYB@@@@@@@@@@@@
+          @@#YJJJJP@@#PYY555YJJJJJJJJJJJP@@@@@@@@G^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^~~!7?JYY55PPPGGB#&&@@@@@GPG&@@5JJJJ5&@@@@@@@@@@@@@
+          @@@@GJJJY&@@@@@@@@&G5YJJJJJJJJJG@@@@@@@P:^^^^^^^^^^^^::::^^^~~!7??JYY55PPGGGBB##&&@@@@@@@@@@@GPB@@@PJJJYB@@@@@@@@@@@@@@@
+          @@@@@#5JB@@@@@@@@@@@@@&BP5YJJJJY@@@@@@@P:^^::::^^^~!7?Y55PGBB#####&&&&&&@@@@@@@@@@@@@@@@@@@@GG&@@@BJJJ5&@@@@@@@@@@@@@@@@
+          @@@@@@@G&@@@@@@@@@@@@@@@@@&#P5JJ&@@@@@@5~~!?JYPGB#&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@GB@@@@BJJYB@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#P#@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@##@@@@BJJP&@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@@@@@@#GP5YP#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@BJYB@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@G5@@@@&BP5YYYP#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&YP&@@@@@@@@@@@@@@@@@@@@@@
+          @@@@@@@@@@@@@P#@@@@@@@@&###&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@GG@@@@@@@@@@@@@@@@@@@@@@@@'
